@@ -11,7 +11,7 @@ const Categories = () => {
     if (!token) return navigate('/');
 
     axios
-      .get('http://192.168.88.201:5000/api/categories', {
+      .get('http://localhost:5000/api/categories', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setCategories(res.data))

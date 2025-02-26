@@ -15,10 +15,10 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const [adminRes, statsRes] = await Promise.all([
-          axios.get(`http://192.168.88.201:5000/api/users/${userId}`, {
+          axios.get(`http://localhost:5000/api/users/${userId}`, {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get('http://192.168.88.201:5000/api/admin/dashboard-stats', {
+          axios.get('http://localhost:5000/api/admin/dashboard-stats', {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

@@ -15,7 +15,7 @@ const Products = () => {
     if (!token) return navigate('/');
 
     axios
-      .get('http://192.168.88.201:5000/api/products', {
+      .get('http://localhost:5000/api/products', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setProducts(res.data))
@@ -27,7 +27,7 @@ const Products = () => {
     const token = localStorage.getItem('token');
     try {
       const res = await axios.post(
-        'http://192.168.88.201:5000/api/products',
+        'http://localhost:5000/api/products',
         { name, price, categoryId, image },
         { headers: { Authorization: `Bearer ${token}` } }
       );

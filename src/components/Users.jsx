@@ -11,7 +11,7 @@ const Users = () => {
     if (!token) return navigate('/');
 
     axios
-      .get('http://192.168.88.201:5000/api/admin/users', {
+      .get('http://localhost:5000/api/admin/users', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setUsers(res.data))

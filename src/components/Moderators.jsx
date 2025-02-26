@@ -42,7 +42,7 @@ const Moderators = () => {
   const handleDeleteModerator = async (id) => {
     const token = localStorage.getItem('token');
     try {
-      await axios.delete(`http://192.168.88.201:5000/api/admin/moderators/${id}`, {
+      await axios.delete(`http://localhost:5000/api/admin/moderators/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setModerators(moderators.filter((mod) => mod.id !== id));
